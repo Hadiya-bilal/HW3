@@ -40,3 +40,25 @@ function displayProducts(page) {
         productGrid.appendChild(productCard);
     });
 }
+
+//Next button function to go to next page if thare are more than 10 products on one page to show
+NextBtn.addEventListener("click", () => {
+    currentPage++;
+    displayProducts(currentPage);
+});   
+
+//Previous button function to go back to previous page 
+// if there are more than one pages and have more products to show 
+PrevBtn.addEventListener("click", () => {
+
+if (currentPage > 1) {
+
+    currentPage--;
+    displayProducts(currentPage);
+} 
+else {
+    //if the current page is only 1 then previous button wiill not work and it will stay on smae page
+    currentPage = 1;
+}       
+}
+);
